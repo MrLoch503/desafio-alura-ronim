@@ -1,0 +1,208 @@
+/*
+The issue of the `<aside>` element overlapping and covering the buttons in the `.button__section` when in responsive mode likely stems from a combination of layout choices and flexbox behavior in the CSS. Let's make some adjustments to ensure that the layout is responsive and prevents overlapping, no matter the display size.
+
+Here’s how you can fix the code:
+
+### HTML Adjustments:
+No changes are needed in the HTML. The structure is good, and the issue is purely CSS-related.
+
+### CSS Adjustments:
+1. **Ensure Flex Containers Don't Overlap**:
+   Make sure the `main` container doesn’t allow the aside and form elements to overlap by setting proper `flex-direction` and `flex-basis` properties.
+
+2. **Manage the `aside` and `form` Responsiveness**:
+   Add some rules to handle the size and layout of the `aside` and form elements so they don't overlap.
+
+3. **Improve Button Section Layout**:
+   Adjust the `.button__section` and its child elements to ensure they behave properly in various screen sizes.
+
+Here’s the revised CSS:
+
+```css
+:root {
+    --main-font: "Ubuntu", sans-serif;
+    font-size: 20px;
+    --second-font: "Cabin", sans-serif;
+    font-size: 15px;
+    --main__color: #0A3871;
+    --second__color: #D8DFE8;
+    --background__color: #F3F5FC;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--background__color);
+    flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+header img {
+    width: 120px;
+    height: 48px;
+    margin: 2% 0 4% 12.5%;
+}
+
+.encrypter__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    font-family: var(--main-font);
+    color: #0A3871;
+    box-sizing: border-box;
+}
+
+.input__field {
+    width: 100%;
+    height: auto;
+    border-color: transparent;
+    background: transparent;
+    font-family: var(--main-font);
+    color: #0A3871;
+    font-size: 2.3rem;
+    font-weight: 300;
+    outline: none;
+    resize: none;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.button__section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.encrypt__button,
+.decrypt__button {
+    background: var(--main__color);
+    width: 100%;
+    max-width: 328px;
+    height: 67px;
+    font: var(--main-font);
+    color: white;
+    padding: 1rem 2rem;
+    border-color: black;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 24px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.decrypt__button {
+    background: var(--second__color);
+    color: var(--main__color);
+    border-color: var(--main__color);
+}
+
+.chico {
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.output__section {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1;
+    max-width: 400px;
+}
+
+.alert_notification {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.alert_text {
+    font-family: var(--second-font);
+    color: #495057;
+}
+
+.output_text {
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.title__noresult {
+    font-family: var(--main-font);
+    font-weight: bold;
+}
+
+.text__noresult {
+    font-family: var(--second-font);
+    text-align: center;
+    padding: 0 3rem 0 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    .chico {
+        display: none;
+    }
+    .button__section {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .encrypt__button, .decrypt__button {
+        width: 100%;
+        max-width: 300px;
+    }
+    .input__field {
+        height: auto;
+        max-width: 624px;
+        margin-top: 2rem;
+    }
+}
+```
+
+### Explanation of Changes:
+
+1. **Flex Container Adjustments**: 
+   The `main` container is adjusted to be responsive using `flex-wrap: wrap;` to ensure that elements within `main` don’t overlap.
+
+2. **`.output__section` Flexibility**: 
+   The `output__section` is set to be flexible (`flex: 1; max-width: 400px;`) so that it scales properly with the rest of the content without overlapping the form.
+
+3. **Responsive Media Queries**: 
+   Added rules to ensure that the layout changes appropriately on smaller screens, making sure the buttons and text areas resize and stack vertically when needed.
+
+4. **Container Spacing**: 
+   Additional padding and box-sizing adjustments ensure that the containers don’t overlap and maintain proper spacing.
+
+These changes should prevent the overlap issue and ensure that the layout is responsive across different screen sizes.
+*/

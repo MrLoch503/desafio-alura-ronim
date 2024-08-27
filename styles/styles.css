@@ -1,0 +1,188 @@
+:root {
+    --main-font: "Ubuntu", sans-serif;
+    font-size: 20px;
+    --second-font: "Cabin", sans-serif;
+    font-size: 15px;
+    --main__color: #0A3871;
+    --second__color: #D8DFE8;
+    --background__color: #F3F5FC;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--background__color);
+    flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+header img {
+    width: 120px;
+    height: 48px;
+    margin: 2% 0 4% 12.5%;
+}
+
+.encrypter__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    font-family: var(--main-font);
+    color: #0A3871;
+    box-sizing: border-box;
+}
+
+.input__field {
+    width: 100%;
+    height: 15em;
+    border-color: transparent;
+    background: transparent;
+    font-family: var(--main-font);
+    color: #0A3871;
+    font-size: 2.3rem;
+    font-weight: 300;
+    outline: none;
+    resize: none;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.input__field::placeholder{
+    font-family: var(--main-font);
+    color: var(--main__color);
+}
+
+.button__section {
+    display: flex;
+    flex-direction: row;
+    gap: 24px; 
+    flex-wrap: nowrap; 
+}
+
+.encrypt__button,
+.decrypt__button {
+    background: var(--main__color);
+    width: 100%;
+    width: 328px;
+    height: 67px;
+    font: var(--main-font);
+    color: white;
+    padding: 1rem 2rem;
+    border-color: black;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 24px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.decrypt__button {
+    background: var(--second__color);
+    color: var(--main__color);
+    border-color: var(--main__color);
+}
+
+.chico {
+    display: block;
+    width: 336px; /* Set the width to 336px */
+    height: 304px; /* Set the height to 304px */
+    margin-bottom: 1rem;
+}
+
+.output__section {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1;
+    max-width: 400px;
+}
+
+.alert_notification {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.alert_text {
+    font-family: var(--second-font);
+    color: #495057;
+}
+
+.output_text {
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.title__noresult {
+    font-family: var(--main-font);
+    font-weight: bold;
+}
+
+.text__noresult {
+    font-family: var(--second-font);
+    text-align: center;
+    padding: 0 3rem 0 3rem;
+}
+
+.output__result {
+    font-family: var(--main-font);
+    color: var(--main__color);
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    .chico {
+        display: none;
+    }
+    .button__section {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .encrypt__button, .decrypt__button {
+        width: 100%;
+        max-width: 300px;
+    }
+    .input__field {
+        height: auto;
+        max-width: 624px;
+        margin-top: 2rem;
+    }
+}
+
+
+/*Color Palette*/
+/*--lavender-web: #d0cfec;
+--viridian: #6a8e7f;
+--moss-green: #989572;
+--ecru: #c6ae82;
+--fairy-tale: #edc7cf;*/

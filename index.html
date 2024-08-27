@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Programacion Encriptador de Texto de Roni</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+</head>
+<body>
+    <header>
+        <img src="./assets/img/alura_logo.svg" class="header__logo">;
+    </header>
+    <main class="main__main">
+        <form class="encrypter__form">
+            <textarea class="input__field" name="" id="" cols="20" rows="0" placeholder="Ingrese el texto a encriptar aquí"></textarea>
+        <div class="container">
+            <div class="button_container">
+                <div class="alert_notification"><img src="./assets/img/attention_logo.svg" alt="ícono de llamado de atención"><span class="alert_text">Solo letras minúsculas sin acentos</span></div>
+                </div>
+                <div class="button__section">
+                    <input class="encrypt__button" type="submit" value="Encriptar">
+                    <input class="decrypt__button" type="submit" value="Desencriptar">
+                </div>
+            </div>
+        </form>
+        <aside class="output__section">
+            <img src="/assets/img/boy_surprised.png" alt="Muchacho busca resultados" class="chico">
+            <div class="output_text">
+                <h3 class="title__noresult">Ningún mensaje fue encontrado</h3>
+                <p class="text__noresult">Ingresa el texto que desees encriptar o desencriptar en el campo de la izquierda.</p>
+            </div>              
+        </aside>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>
